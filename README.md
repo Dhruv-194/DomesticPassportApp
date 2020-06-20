@@ -1,16 +1,19 @@
-# Login
+# DOMESTIC PASSPORT SEVA APP
+
+# The Official Auth0 documentation used in making this app -
+## Login
 
 This sample shows how to authenticate users using Auth0 and obtain their tokens. 
 
 A step by step [Quickstart Tutorial](https://auth0.com/docs/quickstart/native/android/00-login) is provided in our site. If you prefer to skip it and run the sample make sure to [setup](#setup) the project first.
 
-### Requirements
+#### Requirements
 
 This sample app runs on Android versions 21 and above.
 
-# Setup
+## Setup
 
-## Auth0 Credentials
+### Auth0 Credentials
 
 The Auth0 SDK needs to know a few details from the Client to correctly display the Login Page. 
 
@@ -26,7 +29,7 @@ Given a Domain value of `"myuser.auth0.com"` and a Client ID value of `"12345678
 </resources>
 ```
 
-## Manifest Placeholders
+### Manifest Placeholders
 
 Locate the `app/build.gradle` file and ensure the `manifestPlaceholder` property is set inside the android defaultConfig object. The `auth0Domain` and `auth0Scheme` placeholders are used internally by the Auth0 SDK to create an Intent Filter that captures the Web Authentication result. 
 
@@ -52,7 +55,7 @@ android {
 The placeholders in the snippet make use of the domain we've added in the [previous step](#auth0-credentials) and also hardcode a `"demo"` Url scheme. The scheme value can also be saved in the `strings.xml` file if that's prefered. If we change this value we also need to update the call to the `WebAuthProvider` class where we set the scheme that's going to be used.
 
 
-## Callback URL
+### Callback URL
 
 When authentication is requested the sample app will expect a call to the Callback URL with the result of the authentication. This URL is constructed using the values set in the manifest placeholders. In your [client settings](https://manage.auth0.com/#/clients) page, make sure to add under the "Allowed Callback URLs" section a value like the following:
 
