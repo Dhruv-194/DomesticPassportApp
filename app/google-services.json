@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "143196262563",
+    "firebase_url": "https://domesticpassport-d1a2e.firebaseio.com",
+    "project_id": "domesticpassport-d1a2e",
+    "storage_bucket": "domesticpassport-d1a2e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:143196262563:android:5c5e6355a53dd63cf3ef16",
+        "android_client_info": {
+          "package_name": "com.auth0.samples"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "143196262563-i41ohfb624bsr97secdjeum9lag8017h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.auth0.samples",
+            "certificate_hash": "3172a079b3c42a7154ec47c850f2b823b06cb86b"
+          }
+        },
+        {
+          "client_id": "143196262563-v1cvi1gd5jgddlqqjbgo5rc9dc9k7v34.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdwlBxxRkxXbRzq1jGis3aXjjoISgrlIg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "143196262563-v1cvi1gd5jgddlqqjbgo5rc9dc9k7v34.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
