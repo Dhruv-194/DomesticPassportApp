@@ -13,6 +13,8 @@ General Awareness - giving awareness to the government and the migrant workers b
 
 
 # Screenshots - 
+<img src="ss1.png" width = "200" height = "400"  >	 							<img src="ss2.png" width = "200" height = "400" hspace="20" > 							<img src = "ss3.png" width = "200" height = "400"  >                                     <img src = "ss4.png" width = "200" height = "400" hsapce = "20">
+
 
 # The Official Auth0 documentation used in making this app -
 ## Login
