@@ -1,5 +1,19 @@
 # DOMESTIC PASSPORT SEVA APP
 
+During the lockdown of the ongoing pandemic COVID-19, many migrant workers were forced to leave their jobs and cities where they used to work. They were left stranded on roads and highways nowhere to go but their home/permanent addresses that are their villages and rural districts. State and Central Governments are unanswerable when asked about migrant workers and the problems faced by them. This is because the governments do not have the exact number and amount of migrant workers who are travelling from one city to another, therefore they are unable to arrange facilities for the welfare of these migrant workers. 
+
+Hence, we developed this app ‘Domestic Passport Seva App’, an app inspired by the “Internal Passport System” which is adopted by many countries like China, Russia, North Korea to take a note of their internal migration of citizens. Our app takes in user input from the migrant worker and then gives him an internal passport with a unique number and a QR code which when scanned gives back that Unique number and hence verifies him, therefore lessening the chances of frauds and duplications. The entire login and filling of form is secured by using Auth0 plugins and sdk’s and storing of data is done on Firebase Realtime database. 
+This app makes the complex process of registering migrants in a  physical registry easy by adding information to a database. The app asks for two important things - ‘Current City’ the city in which the migrant worker lives and ‘Migrating to City’ the city where he/she lives. This eases the process for the government to help facilitate these hardworking workers when in need during such times of crisis. 
+
+This is just a basic idea which we want the government to follow and make it practical as they did with ‘Aadhaar Card’ . This is in no way a full fledged product ready to be deployed. Just a working prototype of our idea.
+
+Tracks : 
+Diversity - helping the diverse groups of migrant workers
+General Awareness - giving awareness to the government and the migrant workers by making collection and storing of data in an easy and efficient process. 
+
+
+# Screenshots - 
+
 # The Official Auth0 documentation used in making this app -
 ## Login
 
