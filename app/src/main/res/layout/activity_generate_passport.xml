@@ -175,4 +175,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.142" />
 
+    <ImageView
+        android:id="@+id/qrPlaceHolder"
+        android:layout_width="122dp"
+        android:layout_height="87dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.914"
+        app:srcCompat="@android:drawable/screen_background_dark_transparent" />
+
 </android.support.constraint.ConstraintLayout>

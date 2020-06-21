@@ -1,12 +1,14 @@
 package com.auth0.samples;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +21,9 @@ import com.google.firebase.database.ValueEventListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import androidmads.library.qrgenearator.QRGContents;
+import androidmads.library.qrgenearator.QRGEncoder;
+
 public class GeneratePassport extends AppCompatActivity {
 
     Button btnGenerate;
@@ -26,6 +31,8 @@ public class GeneratePassport extends AppCompatActivity {
    FirebaseDatabase database;
     DatabaseReference reff;
     String keyo;
+    ImageView qrImage;
+    Bitmap bitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +48,7 @@ public class GeneratePassport extends AppCompatActivity {
         tissuedate = findViewById(R.id.issuedate);
         texpdate = findViewById(R.id.expdate);
         tunique = findViewById(R.id.uniqne);
+        qrImage = findViewById(R.id.qrPlaceHolder);
 
       Intent intent = getIntent();
         keyo = intent.getStringExtra("message");
@@ -51,6 +59,20 @@ public class GeneratePassport extends AppCompatActivity {
         btnGenerate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+                QRGEncoder qrgEncoder = new QRGEncoder(keyo, null, QRGContents.Type.TEXT, 100);
+                try {
+                    // Getting QR-Code as Bitmap
+                    bitmap = qrgEncoder.getBitmap();
+                    // Setting Bitmap to ImageView
+                    qrImage.setImageBitmap(bitmap);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+
+
                 reff = FirebaseDatabase.getInstance().getReference("Users").child(keyo);
                 //Log.i("see1",keyo);
                 reff.addValueEventListener(new ValueEventListener() {
