@@ -16,6 +16,10 @@ General Awareness - giving awareness to the government and the migrant workers b
 <img src="ss1.png" width = "200" height = "400"  >	 							<img src="ss2.png" width = "200" height = "400" hspace="20" > 							<img src = "ss3.png" width = "200" height = "400"  >                                     <img src = "ss4.png" width = "200" height = "400" hsapce = "20">
 
 
+# Important Links - 
+ - Drive Link : https://drive.google.com/drive/folders/1UllxJf1cAMrvCViJ3rvxu57lv81NKHOO?usp=sharing 
+ - Testing Link : https://appetize.io/app/b4ebz119t1qp553ecxaum7q1vr?device=pixel4&scale=75&orientation=portrait&osVersion=10.0   (may/may not work as it is hosted on a third party site kindly check )
+
 # The Official Auth0 documentation used in making this app -
 ## Login
 
