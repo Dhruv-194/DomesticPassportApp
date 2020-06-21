@@ -22,7 +22,8 @@ import java.util.Date;
 public class GeneratePassport extends AppCompatActivity {
 
     Button btnGenerate;
-    TextView tcurrentcity, tgoingcity, tname, tdob, tpremadd, tgender, tissuedate, texpdate;
+    TextView tcurrentcity, tgoingcity, tname, tdob, tpremadd, tgender, tissuedate, texpdate, tunique;
+   FirebaseDatabase database;
     DatabaseReference reff;
     String keyo;
 
@@ -39,35 +40,63 @@ public class GeneratePassport extends AppCompatActivity {
         tgender = findViewById(R.id.sex);
         tissuedate = findViewById(R.id.issuedate);
         texpdate = findViewById(R.id.expdate);
+        tunique = findViewById(R.id.uniqne);
 
-       /* Intent intent = getIntent();
-        keyo = intent.getStringExtra("message");*/
+      Intent intent = getIntent();
+        keyo = intent.getStringExtra("message");
+        Log.d("see1",keyo);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd G");
         final String currentDate = sdf.format(new Date());
 
         btnGenerate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                reff = FirebaseDatabase.getInstance().getReference().child("MAIuaZeq5cpgdT7e-r1");
+                reff = FirebaseDatabase.getInstance().getReference("Users").child(keyo);
                 //Log.i("see1",keyo);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        String currentcity = dataSnapshot.child("hcurrentcity").getValue().toString();
-                        String goingcity = dataSnapshot.child("hgoingtocity").getValue().toString();
-                        String name = dataSnapshot.child("hname").getValue().toString();
-                        String premadd = dataSnapshot.child("hpermaddress").getValue().toString();
-                        String dob = dataSnapshot.child("hdob").getValue().toString();
-                        String gender = dataSnapshot.child("hgender").getValue().toString();
 
-                        tcurrentcity.setText(currentcity);
-                        tgoingcity.setText(goingcity);
-                        tname.setText(name);
-                        tpremadd.setText(premadd);
-                        tdob.setText(dob);
-                        tgender.setText(gender);
-                        tissuedate.setText(currentDate);
-                        texpdate.setText("2023");
+                        Object currentcity = dataSnapshot.child("hcurrentcity").getValue();
+                            if (currentcity==null){Toast.makeText(GeneratePassport.this, "It is null", Toast.LENGTH_SHORT).show();}
+                          String ccnew = currentcity.toString();
+
+                            Object goingcity = dataSnapshot.child("hgoingtocity").getValue();
+                        if (goingcity==null){Toast.makeText(GeneratePassport.this, "It is null", Toast.LENGTH_SHORT).show();}
+                        String gcnew = goingcity.toString();
+
+                        Object name = dataSnapshot.child("hname").getValue();
+                        if (name==null){Toast.makeText(GeneratePassport.this, "It is null", Toast.LENGTH_SHORT).show();}
+                        String namenew = name.toString();
+
+                        Object permadd = dataSnapshot.child("hpermaddress").getValue();
+                        if (permadd==null){Toast.makeText(GeneratePassport.this, "It is null", Toast.LENGTH_SHORT).show();}
+                        String permaddnew = permadd.toString();
+
+                        Object dob = dataSnapshot.child("hdob").getValue();
+                        if (dob==null){Toast.makeText(GeneratePassport.this, "It is null", Toast.LENGTH_SHORT).show();}
+                        String dobnew = dob.toString();
+
+                        Object gender = dataSnapshot.child("hgender").getValue();
+                        if (gender==null){Toast.makeText(GeneratePassport.this, "It is null", Toast.LENGTH_SHORT).show();}
+                        String gendernew = gender.toString();
+
+                            /*String goingcity = dataSnapshot.child("hgoingtocity").getValue().toString();
+                            String name = dataSnapshot.child("hname").getValue().toString();
+                            String premadd = dataSnapshot.child("hpermaddress").getValue().toString();
+                            String dob = dataSnapshot.child("hdob").getValue().toString();
+                            String gender = dataSnapshot.child("hgender").getValue().toString();*/
+
+                           tcurrentcity.setText(ccnew);
+                            tgoingcity.setText(gcnew);
+                            tname.setText(namenew);
+                            tpremadd.setText(permaddnew);
+                            tdob.setText(dobnew);
+                            tgender.setText(gendernew);
+                            tissuedate.setText(currentDate);
+                            texpdate.setText("2023");
+                            tunique.setText(keyo);
+
                     }
 
                     @Override
